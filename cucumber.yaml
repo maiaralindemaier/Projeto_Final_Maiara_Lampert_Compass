@@ -1,6 +1,8 @@
+default: --no-source --color --format pretty --format html --out report.html
 default: -p prd
 default: -p hml
 
 #Enviroment
 hml: ENVIRONMENT="hml"
 prd: ENVIRONMENT="prd"
+
