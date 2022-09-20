@@ -6,3 +6,9 @@ default: -p hml
 hml: ENVIRONMENT="hml"
 prd: ENVIRONMENT="prd"
 
+#Browsers
+chrome: BROWSER="chrome"
+
+#Visual mode
+headless: HEADLESS="true"
+
