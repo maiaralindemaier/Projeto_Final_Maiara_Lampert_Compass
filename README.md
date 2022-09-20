@@ -1,1 +1,1 @@
-# RealityStone_Maiara_Sprint_5
+# Projeto_Fina_Maiara_Lampert_Compass
