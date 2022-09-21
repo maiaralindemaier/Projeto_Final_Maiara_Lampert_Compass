@@ -42,8 +42,8 @@ http://chromedriver.chromium.org/downloads
 https://medium.com/cwi-software/automatizando-testes-de-aplicações-web-com-capybara-e-selenium-webdriver-8e630c7f6f03
 https://github.com/teamcapybara/capybara
 https://github.com/site-prism/site_prism
-https://www.youtube.com/watch?v=nh-tU29Tm8s&t=3945s
 https://front.serverest.dev/login
+https://www.youtube.com/watch?v=nh-tU29Tm8s&t=3945s
 
 ## Agradecimentos.
 
