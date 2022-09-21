@@ -7,12 +7,17 @@ Então('deverá carregar a página de login') do
     expect(page).to have_content 'Login'
 end
 
-Quando('eu faço login com {string} e {string}') do |email, senha|
-    fill_in('Digite seu email', with: email)
-    fill_in('Digite sua senha', with: senha)
+Então('faça login com {string} e {string}') do |string, string2|
+    fill_in('Digite seu email', with: string)
+    fill_in('Digite sua senha', with: string2)
     click_button('Entrar')
 end
 
-Então('devo ver {string} na área logada') do |string|
+Então('deverá apresentar {string} na área logada') do |string|
+        expect(page).to have_content string
+end
+
+Então('deverá apresentar mensagem de erro {--string}') do |string|
     expect(page).to have_content string
 end
+  
