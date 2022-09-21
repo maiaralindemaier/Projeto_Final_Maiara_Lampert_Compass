@@ -8,13 +8,12 @@ Quando('faço login com {string} e {string}') do |string, string2|
     click_button('Entrar')
 end
 
-Quando('buscar pelo produto {string}') do |string|
-   @home_page.search_for(string)
-   @home_results_page = HomeResults.new
-   @search_for = SearcheFor.new
+Então('deverá buscar pelo produto {string}') do |string|
+    fill_in('Pesquisar Produtos', with: string)
+    click_button('Pesquisar')
 end
   
-Então('deverão ser retornados resultados na busca') do
-    @home_results_page
-    expect(@home_results_page).to have_product 'product-detail-name'
+Então('deverão ser retornados resultados na busca {string}') do |string|
+    expect(page).to have_content string
+    expect(page).to have_content 'Adicionar a lista'
 end
