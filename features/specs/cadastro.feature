@@ -16,12 +16,13 @@ Cenário: Realizar cadastro valido
 @cadastro_invalid
 Cenário: Realizar cadastro invalido
   Quando eu faço cadastro com "João", "joao@gmail" e "senha1995"
+  E deverá realizar cadastro 
   Então deverá apresentar mensagem de erro "Email deve ser um email válido"
 
 @cadastro_vazio
 Cenário: Campos vazios
-  Quando eu faço cadastro com "", "" e ""
-  Então deverá apresentar mensagens de erro em cadastrar "Nome não pode ficar em branco", "Email não pode ficar em branco" e "Password não pode ficar em branco"
+  E deverá realizar cadastro 
+  Então deverá apresentar mensagens de erro em cadastrar "Nome é obrigatório", "Email é obrigatório" e "Password é obrigatório"
 
 #cucumber -t @cadastro_valid
 #cucumber -t @cadastro_invalid   
