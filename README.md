@@ -26,16 +26,17 @@ source 'https://rubygems.org'
 
 ## Técnologias utilizadas.
 
-http://rubyinstaller.org/downloads/
-
 https://cmder.app
 
-https://git-scm.com/
-
-https://code.visualstudio.com/
+https://github.com
 
 http://chromedriver.chromium.org/downloads
 
+https://git-scm.com/
+
+http://rubyinstaller.org/downloads/
+
+https://code.visualstudio.com/
 
 ## Referências.
 
