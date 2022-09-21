@@ -7,13 +7,14 @@ Projeto final de Automação de Teste Front-End com Ruby, aplicação de conteú
 ##Gems para realizar os testes.
 
 source 'https://rubygems.org'
-gem 'site_prism'
-gem 'capybara'
-gem 'cucumber'
-gem 'rspec'
-gem 'selenium-webdriver'
 
-###Instalação das gem.
+*gem 'site_prism'
+*gem 'capybara'
+*gem 'cucumber'
+*gem 'rspec'
+*gem 'selenium-webdriver'
+
+###Instalação das gems.
 
 * abrir o cmder 
 * rodar comando - cd https://github.com/maiaralindemaier/RealityStone_Maiara_Sprint_5.git
@@ -23,7 +24,7 @@ gem 'selenium-webdriver'
 * rodar comando - bundle exec cucumber 
 
 
-##Técnologias utilizadas
+##Técnologias utilizadas.
 
 http://rubyinstaller.org/downloads/
 
@@ -36,7 +37,7 @@ https://code.visualstudio.com/
 http://chromedriver.chromium.org/downloads
 
 
-##Referências
+##Referências.
 
 https://medium.com/cwi-software/automatizando-testes-de-aplicações-web-com-capybara-e-selenium-webdriver-8e630c7f6f03
 https://github.com/teamcapybara/capybara
@@ -44,7 +45,12 @@ https://github.com/site-prism/site_prism
 https://www.youtube.com/watch?v=nh-tU29Tm8s&t=3945s
 https://front.serverest.dev/login
 
-##Autor
+##Agradecimentos.
+
+A toda turma RealityStone - T04 pelas calls qua fizemos para solucionar dúvidas, muito bom poder contar com os colégas.
+Obrigado
+
+##Autor.
 
 Maiara lampert Lindemaier
 https://github.com/maiaralindemaier/RealityStone_Maiara_Sprint_5.git
