@@ -16,8 +16,7 @@ source 'https://rubygems.org'
 
 ## Instalação das gems.
 
-* abrir o cmder 
-* rodar comando - cd https://github.com/maiaralindemaier/RealityStone_Maiara_Sprint_5.git
+* abrir o cmder na pasta do projeto local
 * rodar comando - code .
 * rodar comando - git pull
 * rodar comando - bundle install
