@@ -9,7 +9,7 @@ ENVIRONMENT_CONFIG = YAML.load_file(File.dirname(__FILE__) + "/environment/#{ENV
 puts ENVIRONMENT_CONFIG
 URL = ENVIRONMENT_CONFIG["url"]
 
- Capybara.register_driver :my_chrome do |app|
+Capybara.register_driver :my_chrome do |app|
    caps = Selenium::WebDriver::Remote::Capabilities.chrome("goog:chromeOptions" => 
      {"args" => ["--start-maximized", "--incognito", "--window-size=1420,835"]})
   
@@ -20,7 +20,7 @@ URL = ENVIRONMENT_CONFIG["url"]
     Capybara::Selenium::Driver.new(app, browser: :chrome, capabilities: caps)
 end
   
-  Capybara.default_driver = :selenium_chrome
+  Capybara.default_driver = :my_chrome
   Capybara.app_host = URL
   Capybara.default_max_wait_time = 15
 
