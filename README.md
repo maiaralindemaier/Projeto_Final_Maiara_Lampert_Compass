@@ -48,7 +48,7 @@ https://www.youtube.com/watch?v=nh-tU29Tm8s&t=3945s
 
 ## Agradecimentos.
 
-Agradeço de coração meu colegas da turma pela experiência em especial Bruno Guimaraes dos Santos e Eliani da Silva Freitas que me ajudaram muito nesta ultima etapa.
+Agradeço de coração meus colegas da turma pela experiência, em especial Bruno Guimaraes dos Santos e Eliani da Silva Freitas que me ajudaram muito nesta ultima etapa.
 
 ## Autor.
 
