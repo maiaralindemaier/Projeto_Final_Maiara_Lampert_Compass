@@ -2,7 +2,7 @@
 
 ## Automação de testes do site https://front.serverest.dev/login
 
-Projeto final de Automação de Teste Front-End com Ruby, aplicação de conteúdo da sprint 5. 
+Projeto final de Automação de Teste Front-End com Ruby sprint 6. 
 
 ## Gems para realizar os testes.
 
@@ -13,6 +13,7 @@ source 'https://rubygems.org'
 *gem 'cucumber'
 *gem 'rspec'
 *gem 'selenium-webdriver'
+*gem 'json'
 
 ## Instalação das gems.
 
@@ -47,8 +48,7 @@ https://www.youtube.com/watch?v=nh-tU29Tm8s&t=3945s
 
 ## Agradecimentos.
 
-A toda turma RealityStone - T04 pelas calls qua fizemos para solucionar dúvidas, muito bom poder contar com os colégas.
-Obrigado
+Agradeço de coração meus colegas da turma pela experiência, em especial Bruno Guimaraes dos Santos e Eliani da Silva Freitas que me ajudaram muito nesta ultima etapa.
 
 ## Autor.
 
