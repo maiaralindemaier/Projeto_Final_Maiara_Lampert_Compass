@@ -1,23 +1,57 @@
-  Dado('que esteja na página de cadastro') do
-    visit('https://front.serverest.dev/cadastrarusuarios')
-  end
-  
-  Quando('eu faço cadastro com {string}, {string} e {string}') do |nome, email, senha|
-    fill_in('Digite seu nome', with: nome)
-    fill_in('Digite seu email', with: email)
-    fill_in('Digite sua senha', with: senha)
-  end
-  
-  Então('deverá realizar cadastro') do
-    click_button('Cadastrar')
-  end
-  
-  Então('deverá apresentar mensagem de erro {string}') do |string|
-    expect(page).to have_content string
-  end
+Dado('que esteja na tela de Cadastro') do
+  @cadastro_page = Pages::TelaCadastro.new 
+  @cadastro_page.load
+end
 
-  Então('deverá apresentar mensagens de erro em cadastrar {string}, {string} e {string}') do |string, string2, string3|
-    expect(page).to have_content string
-    expect(page).to have_content string2
-    expect(page).to have_content string3
-  end
+Quando('inserir os dados usuarios validos {string}, {string}, {string}') do |nome, email, senha|
+@cadastro_page.cadastro_usuario(
+  Static.set(nome),
+  Static.set(email),
+  Static.set(senha)
+)
+end
+
+Então('o usuário será cadastrado {string}') do |mensagem|
+expect(@cadastro_page).to have_content(mensagem)
+end
+
+Quando('inserir os dados usuarios inválidos {string}, {string}, {string}') do |nome, email, senha|
+@cadastro_page.cadastro_usuario(
+  Static.set(nome),
+  Static.set(email),
+  Static.set(senha)
+)
+@cadastro_page.finaliza_cadastro_usuario_nao_admin
+end
+
+Então('o usuário deverá receber uma mensagem de erro {string}') do |mensagem|
+expect(@cadastro_page).to have_content(mensagem)
+end
+
+Quando('inserir os dados adm válidos {string}, {string}, {string}') do |nome, email, senha|
+@cadastro_page.cadastro_usuario(
+  Static.set(nome),
+  Static.set(email),
+  Static.set(senha),
+  "true"
+)
+@cadastro_page.finaliza_cadastro_usuario_admin
+end
+
+Então('o usuário administrador deverá ser cadastrado com a mensagem {string}') do |mensagem|
+ expect(@cadastro_page).to have_content(mensagem)
+end
+
+Quando('inserir os dados adm inválidos {string}, {string}, {string}') do |nome, email, senha|
+@cadastro_page.cadastro_usuario(
+  Static.set(nome),
+  Static.set(email),
+  Static.set(senha),
+  "true"
+)
+@cadastro_page.finaliza_cadastro_usuario_admin
+end
+
+Então('o usuário deverá receber uma mensagem adm {string}') do |mensagem|
+  expect(@cadastro_page).to have_content(mensagem)
+end

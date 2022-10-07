@@ -1,29 +1,51 @@
 # language: pt
+@cadastrar_usuarios
+Funcionalidade: Cadastrar usuario
+    Como usuário do ServeRest
+    Quero realizar um cadastro
+    Para verificar o funcionamento do site
 
-Funcionalidade:Cadastro
-COMO usuario do site Server Rest
-QUERO fazer novo cadastro
-PARA fazer login no sistema
+    Contexto: Esteja na tela de Cadastro
+        Dado que esteja na tela de Cadastro
 
-Contexto:Estar na página de cadastro
-  Dado que esteja na página de cadastro
+@cadastro_usuario
+Cenário: cadastro usuario
+    Quando inserir os dados usuarios validos <nome>, <email>, <senha>
+    Então o usuário será cadastrado <msg>
+    Exemplos:
+    | nome      | email                | senha                | msg                              |
+    | "user"    | "email_user"         | "senha_user"         | "Cadastro realizado com sucesso" |
 
-@cadastro_valid
-Cenário: Realizar cadastro valido
-  Quando eu faço cadastro com "João", "joao@gmail.com" e "senha1995"
-  Então deverá realizar cadastro 
+@cadastro_usuario_error
+Cenário: cadastro usuario error
+    Quando inserir os dados usuarios inválidos <nome>, <email>, <senha>
+    Então o usuário deverá receber uma mensagem de erro <msg>
+    Exemplos:
+    | nome                   | email                | senha                 | msg                                 |
+    | "nome"                 | "senha_user_invalid" | "senha"               | "Email é obrigatório"               |
+    | "nome"                 | "email"              | "senha_user_invalid"  | "Password não pode ficar em branco" |
+    | "senha_user_invalid"   | "email"              | "senha"               | "Nome não pode ficar em branco"     |
 
-@cadastro_invalid
-Cenário: Realizar cadastro invalido
-  Quando eu faço cadastro com "João", "joao@gmail" e "senha1995"
-  E deverá realizar cadastro 
-  Então deverá apresentar mensagem de erro "Email deve ser um email válido"
+@cadastro_adm
+Cenário: cadastro adm
+    Quando inserir os dados adm válidos <nome>, <email>, <senha>
+    Então o usuário administrador deverá ser cadastrado com a mensagem <msg>
+    Exemplos:
+    | nome          | email               | senha               | msg                              |
+    |  "user_adm"   |  "email_user_adm"   | "senha_user_adm"    | "Cadastro realizado com sucesso" |
 
-@cadastro_vazio
-Cenário: Campos vazios
-  E deverá realizar cadastro 
-  Então deverá apresentar mensagens de erro em cadastrar "Nome é obrigatório", "Email é obrigatório" e "Password é obrigatório"
+@cadastro_adm_error
+Cenário: cadastro adm error
+    Quando inserir os dados adm inválidos <nome>, <email>, <senha>
+    Então o usuário deverá receber uma mensagem adm <msg>
+    Exemplos:
+    | nome         | email             | senha                  | msg                                 |
+    |  "user_adm"  | "email_user_adm"  |  "user_adm_invalid"    | "Password não pode ficar em branco" |
+    |  "user_adm"  | "user_adm_invalid"|  "senha_adm"           | "Email é obrigatório"               |
 
-#cucumber -t @cadastro_valid
-#cucumber -t @cadastro_invalid   
-#cucumber -t @cadastro_vazio
+
+
+#bundle exec cucumber -p default -t@cadastro_usuario
+#bundle exec cucumber -p default -t@cadastro_usuario_error
+#bundle exec cucumber -p default -t@cadastro_adm
+#bundle exec cucumber -p default -t@cadastro_adm_error

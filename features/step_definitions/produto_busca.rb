@@ -1,19 +1,23 @@
 Dado('que esteja na home interna') do
-    visit('https://front.serverest.dev/home')
+    @produto_busca_page = Pages::ProdutoBusca.new 
+    @login_page = Pages::Login.new 
+    @produto_busca_page.load
 end
 
-Quando('faço login com {string} e {string}') do |string, string2|
-    fill_in('Digite seu email', with: string)
-    fill_in('Digite sua senha', with: string2)
-    click_button('Entrar')
+Quando('faço login') do
+    @login_page.login_valid(
+        Static.set('email_user'), 
+        Static.set('senha_user')
+    )
 end
 
-Então('deverá buscar pelo produto {string}') do |string|
-    fill_in('Pesquisar Produtos', with: string)
-    click_button('Pesquisar')
+Então('deverá buscar pelo produto') do 
+    @produto_busca_page.search_for (
+        Static.set('product_valid')
+    )
 end
   
-Então('deverão ser retornados resultados na busca {string}') do |string|
-    expect(page).to have_content string
-    expect(page).to have_content 'Adicionar a lista'
+Então('deverão ser retornados resultados na busca') do
+    expect(@produto_busca_page).to have_content Static.set('product_valid')
+    expect(@produto_busca_page).to have_content 'Adicionar a lista'
 end
