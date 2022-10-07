@@ -1,11 +1,11 @@
-module Factory
-    class Static
-        def self.load_file
-            YAML.load_file(File.dirname(__FILE__) + "/static/#{ENVIRONMENT}.yml") 
-        end
-        
-        def self.static_data(data)
-           binding.pry
-        end    
-    end        
-end    
+require "json"
+require "yaml"
+require "ostruct"
+
+class Static
+    @static = JSON.parse(YAML.load(File.read("features/support/factory/static/hml.yml")).to_json,object_class: OpenStruct)
+    
+    def self.set(info)
+        @static.send(info)
+    end
+end

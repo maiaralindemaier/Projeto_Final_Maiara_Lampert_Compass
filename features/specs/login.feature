@@ -1,5 +1,6 @@
 # language: pt
 
+@login
 Funcionalidade:Login/cadastro
 Como usuário do site Server Rest
 QUERO realizar login
@@ -11,15 +12,20 @@ Contexto: Carregar a página
 @login_error
 Cenário: Carregar a página login com erro
   Então deverá carregar a página de login
-  E faça login com "joao@gmail.com" e "senha"
-  Então deverá apresentar mensagem de erro "Email e/ou senha inválidos"
-  
+  E faça login com dados invalidos
+  Então deverá apresentar mensagem de erro <msg>  
+   Exemplos:
+   | email            | senha               | msg                                 |
+   | "joao@gmail.com" | "senha"             | "Email é obrigatório"               |
+    
 @login_sucess
 Cenário: Carregar a página login
   Então deverá carregar a página de login
-  E faça login com "joao@gmail.com" e "senha1995"
-  Então deverá apresentar "Serverest Store" na área logada
-
+  E faça login com dados validos
+  Então deverá apresentar <texto> na área logada
+   Exemplos:
+   | email            | senha               | texto                             |
+   | "joao@gmail.com" | "senha1995"         | "Serverest Store"                 |
 
 
 #cucumber -t @login_sucess

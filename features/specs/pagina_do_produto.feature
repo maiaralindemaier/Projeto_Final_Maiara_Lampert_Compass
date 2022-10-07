@@ -10,11 +10,7 @@ Contexto: Estar na página de um  produto
  Quando realizar uma busca por um produto existente
  E acessar a página do produto  
 
-@quantify_product
-Cenário: aumentar a quatidade do produto na PDP
-Quando aumentar a quantidade de produto 
-Então deverá alterar a quantidade exibida na PDP
-
-@PDP_inexistente
-Cenário: 
-
+@adc_a_lista
+Cenário: adicionar produto a lista de compras
+Quando adicionar um produto a lista de compras 
+Então o produto deverá ser adicionado a lista de compras

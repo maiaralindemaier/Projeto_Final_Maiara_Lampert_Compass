@@ -10,12 +10,9 @@ Contexto: Estar na home interna
   Dado que esteja na home interna
 
 Cenário: Realiza o login/buscar produtos
-  Quando faço login com "joao@gmail.com" e "senha1995"
-  E deverá buscar pelo produto '<produtos>' 
-  Então deverão ser retornados resultados na busca '<produtos>'
+  Quando faço login
+  E deverá buscar pelo produto 
+  Então deverão ser retornados resultados na busca 
   
-Exemplos:
-|produtos                        |
-|Awesome Metal Chips             |
-|Logitech MX Vertical            |
+
 
